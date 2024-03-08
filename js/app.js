@@ -47,3 +47,12 @@ document.querySelector('#successivo .succ').addEventListener("click", function (
     const nextItem = items[currentIndex];
     nextItem.classList.add('show');
 })
+
+document.querySelector('#precedente .prec').addEventListener("click", function () {
+    // Tolgo la classe show dall'elemento corrente
+    document.querySelector('.item.show').classList.remove('show');
+    const items = document.querySelectorAll('.item');
+    currentIndex = currentIndex - 1;
+    const nextItem = items[currentIndex];
+    nextItem.classList.add('show');
+})
