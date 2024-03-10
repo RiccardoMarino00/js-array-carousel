@@ -56,6 +56,18 @@
     transform: translateY(-50%);
 }
 
+.succ{
+    border: none;
+    padding: 5px;
+    border-radius: 999px;
+}
+
+.prec{
+    border: none;
+    padding: 5px;
+    border-radius: 999px;
+}
+
 
       /* UTILITY */
 

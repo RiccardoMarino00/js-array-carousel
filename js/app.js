@@ -33,8 +33,6 @@ for (let i = 0; i < immaginiArray.length; i++) {
 }
 
 
-
-
 // Devo far passare la classe show da un item all'altro per scorrere le immagini in avanti (succ)
 // Creo un event listener che al click sul tasto succ sposta la classe show da img1 a img2
 // Creo una costante per il tasto succ
@@ -46,6 +44,8 @@ document.querySelector('#successivo .succ').addEventListener("click", function (
     currentIndex = currentIndex + 1;
     const nextItem = items[currentIndex];
     nextItem.classList.add('show');
+
+    
 })
 
 document.querySelector('#precedente .prec').addEventListener("click", function () {
@@ -53,6 +53,20 @@ document.querySelector('#precedente .prec').addEventListener("click", function (
     document.querySelector('.item.show').classList.remove('show');
     const items = document.querySelectorAll('.item');
     currentIndex = currentIndex - 1;
-    const nextItem = items[currentIndex];
-    nextItem.classList.add('show');
+    const prevItem = items[currentIndex];
+    prevItem.classList.add('show');
+
+
+    //  if ( currentIndex < 0) {
+
+    //     document.querySelector(".item.show").classList.remove("show")
+
+    //  }  
 })
+
+// Cilo infinito
+  //Quando utente è sulla prima immagie e clicca prec deve andare all'ultima img
+    // SE i < 0 vai all'ultima slide
+    // INVECE SE i = lunghezza array vai alla prima img
+
+        
