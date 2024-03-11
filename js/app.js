@@ -8,6 +8,7 @@ const immaginiArray = [
 
 let currentIndex = 0;
 
+
 // Recupero elemento contenitore (container-items)
 const itemsContainer = document.querySelector(".container-items");
 // Inserisco all'interno di container-items le mie immagini
@@ -31,42 +32,43 @@ for (let i = 0; i < immaginiArray.length; i++) {
     itemsContainer.innerHTML += divPrintHtml;
 
 }
+const items = document.querySelectorAll('.item');
 
+const lastIndex = items.length - 1;
 
-// Devo far passare la classe show da un item all'altro per scorrere le immagini in avanti (succ)
-// Creo un event listener che al click sul tasto succ sposta la classe show da img1 a img2
-// Creo una costante per il tasto succ
 // Creo event listener
 document.querySelector('#successivo .succ').addEventListener("click", function () {
-    // Tolgo la classe show dall'elemento corrente
+
     document.querySelector('.item.show').classList.remove('show');
-    const items = document.querySelectorAll('.item');
-    currentIndex = currentIndex + 1;
+
+    if ( currentIndex < lastIndex) {
+        currentIndex ++
+
+    } else {
+        currentIndex = 0
+    }
+
     const nextItem = items[currentIndex];
     nextItem.classList.add('show');
-
-    
+  
 })
 
+
+
 document.querySelector('#precedente .prec').addEventListener("click", function () {
+
     // Tolgo la classe show dall'elemento corrente
     document.querySelector('.item.show').classList.remove('show');
-    const items = document.querySelectorAll('.item');
-    currentIndex = currentIndex - 1;
+
+    if (currentIndex > 0) {
+        currentIndex --
+    } else {
+        currentIndex = lastIndex
+    }
+
+    
     const prevItem = items[currentIndex];
     prevItem.classList.add('show');
 
-
-    //  if ( currentIndex < 0) {
-
-    //     document.querySelector(".item.show").classList.remove("show")
-
-    //  }  
 })
 
-// Cilo infinito
-  //Quando utente è sulla prima immagie e clicca prec deve andare all'ultima img
-    // SE i < 0 vai all'ultima slide
-    // INVECE SE i = lunghezza array vai alla prima img
-
-        
